@@ -1,0 +1,39 @@
+.video-card-header{
+  margin-bottom: 10px;
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-card-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-card-content {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the avatar and the title */
+  padding: 5px 10px;
+}
+.video-card-content div {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-title{
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.video-card-footer{
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
