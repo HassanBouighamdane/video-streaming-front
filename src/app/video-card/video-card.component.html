@@ -1,31 +1,25 @@
-<div class="container" >
-<mat-card>
- <mat-card-header class="video-card-header">
-   <img mat-card-image [src]="video.frontImageUrl" alt="image"/>
- </mat-card-header>
+<div class="container">
+  <mat-card>
 
-  <mat-card-content class="video-card-content" >
-    <button mat-card-avatar  (click)="AccessChannel()" class="avatar-button" >
-      <img [src]="video.frontImageUrl"  alt="userAvatar"/>
-    </button>
-    <div >
-      <mat-card-title>
-        {{video.title}}
-      </mat-card-title>
-      <mat-card-subtitle >
-        userName
-      </mat-card-subtitle>
-    </div>
+    <mat-card-header class="d-flex justify-content-center align-items-center mb-3" style="height: 250px; overflow: hidden;">
+      <img mat-card-image [src]="video.frontImageUrl" alt="image" class="img-fluid w-100 h-100" style="object-fit: cover;">
+    </mat-card-header>
 
-  </mat-card-content>
+    <!-- Video Card Content -->
+    <mat-card-content class="d-flex align-items-center px-2 py-1 gap-2">
+      <button mat-card-avatar (click)="AccessChannel()" class="btn p-0 border-0 bg-transparent align-items-center justify-content-center">
+        <img [src]="video.frontImageUrl" alt="userAvatar" class="rounded-circle img-fluid w-100 h-100">
+      </button>
+      <div class="d-flex flex-column">
+        <mat-card-title class="h5 m-0">{{video.title}}</mat-card-title>
+        <mat-card-subtitle class="text-muted">userName</mat-card-subtitle>
+      </div>
+    </mat-card-content>
 
-  <mat-card-footer class="video-card-footer">
-    <mat-card-subtitle >
-     {{video.watchNumber}} views
-    </mat-card-subtitle>
-    <mat-card-subtitle >
-      {{video.published.getFullYear()}}
-    </mat-card-subtitle>
-  </mat-card-footer>
-</mat-card>
+    <!-- Video Card Footer -->
+    <mat-card-footer class="d-flex align-items-center gap-2 ms-3 mb-2">
+      <mat-card-subtitle>{{video.watchNumber}} views</mat-card-subtitle>
+      <mat-card-subtitle>{{video.published.getFullYear()}}</mat-card-subtitle>
+    </mat-card-footer>
+  </mat-card>
 </div>
