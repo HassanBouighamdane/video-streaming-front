@@ -1,1 +1,78 @@
-<p>video works!</p>
+<div class="container my-4">
+  <!-- Video Player Section -->
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <!-- Video Player -->
+      <div class="video-player mb-2">
+        <video controls class="w-100" [src]="video.videoUrl" poster="{{video.frontImageUrl}}">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Video Info Section -->
+      <div class="video-info p-3">
+        <h2 class="mb-1">{{video.title}}</h2>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span>{{video.watchNumber}} views</span>
+          <span>{{video.published | date:'longDate'}}</span>
+        </div>
+        <p class="text-muted">{{video.description}}</p>
+        <div class="d-flex gap-2 mt-2">
+          <span class="badge bg-primary" *ngFor="let category of video.categories">{{category}}</span>
+        </div>
+
+        <!-- Like/Dislike Section -->
+        <div class="d-flex gap-3 mt-3">
+          <!-- Like Button -->
+          <button class="btn btn-light d-flex align-items-center gap-1" (click)="toggleLike()">
+            <i class="bi" [ngClass]="{'bi-hand-thumbs-up-fill': liked, 'bi-hand-thumbs-up': !liked}"></i>
+            <span>{{video.likes}} Likes</span>
+          </button>
+          <!-- Dislike Button -->
+          <button class="btn btn-light d-flex align-items-center gap-1" (click)="toggleDislike()">
+            <i class="bi" [ngClass]="{'bi-hand-thumbs-down-fill': disliked, 'bi-hand-thumbs-down': !disliked}"></i>
+            <span>{{video.dislikes}} Dislikes</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Comments Section -->
+      <div class="comments-section p-3 mt-4">
+        <h4>Comments</h4>
+
+        <!-- New Comment Input -->
+        <div class="new-comment mb-3">
+          <textarea class="form-control" rows="3" placeholder="Add a comment..." [(ngModel)]="newComment"></textarea>
+          <button class="btn btn-primary mt-2" (click)="addComment()">Post Comment</button>
+        </div>
+
+        <!-- Display Comments -->
+        <div class="comment-list mt-4" *ngFor="let comment of comments">
+          <div class="comment mb-3 p-2 border rounded">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="fw-bold">{{comment.user}}</span>
+              <span class="text-muted">{{comment.date | date:'short'}}</span>
+            </div>
+            <p class="mt-2">{{comment.text}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended Videos Section -->
+    <div class="col-12 col-lg-4">
+      <div class="recommended-section mt-3 mt-lg-0">
+        <h4>Recommended</h4>
+        <div *ngFor="let recommendedVideo of recommendedVideos" class="recommended-video mb-3 p-2 border rounded" (click)="navigateToVideo(recommendedVideo.id)">
+          <div class="d-flex gap-2">
+            <img [src]="recommendedVideo.frontImageUrl" alt="Recommended video" class="img-thumbnail" style="width: 100px; height: 60px; object-fit: cover;">
+            <div>
+              <mat-card-title class="d-block mb-1">{{recommendedVideo.title}}</mat-card-title>
+              <small class="text-muted">{{recommendedVideo.watchNumber}} views • {{recommendedVideo.published | date:'shortDate'}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

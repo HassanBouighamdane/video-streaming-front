@@ -1,58 +1,68 @@
-<mat-toolbar  >
+<mat-toolbar class="d-flex justify-content-between align-items-center">
+  <!-- Toggle Sidebar Button -->
   <button mat-icon-button (click)="drawer.toggle()">
-    <mat-icon>
-      menu
-    </mat-icon>
+    <mat-icon>menu</mat-icon>
   </button>
-  <mat-menu >
-    <button mat-button routerLink="/">Home</button>
-  </mat-menu>
-  <h3 class="m-2">Hassan Streaming</h3>
-  <input type="text" class="m-1 rounded"/>
-  <button  class="btn btn-outline-secondary" (click)="search()">Search</button>
+
+  <!-- Brand or Logo -->
+  <h3 class="m-2 d-none d-md-block cursor-pointer" routerLink="/">Hassan Streaming</h3>
+
+  <!-- Search Icon and Input -->
+  <div class="search-container d-flex">
+    <button mat-icon-button id="search-icon" class="d-block d-md-none" (click)="toggleSearch()">
+      <mat-icon>search</mat-icon>
+    </button>
+
+    <div id="search-input" class="d-none d-flex d-sm-flex align-items-center">
+      <input type="text" class="form-control m-1 rounded" placeholder="Search" />
+      <button class="btn btn-outline-secondary" (click)="search()">Search</button>
+    </div>
+  </div>
+
   <span class="spacer"></span>
 
+  <!-- User Authentication Options -->
   <button mat-button routerLink="/login">Sign In</button>
   <button mat-icon-button [matMenuTriggerFor]="userMenu">
     <mat-icon>person</mat-icon>
   </button>
+
+  <!-- User Dropdown Menu -->
   <mat-menu #userMenu="matMenu">
     <button mat-button routerLink="/account">Account</button>
     <button mat-button routerLink="/logout">Logout</button>
   </mat-menu>
-
 </mat-toolbar>
 
-<mat-drawer-container >
+<!-- Drawer Section -->
+<mat-drawer-container>
   <mat-drawer #drawer opened="false" position="start" mode="side">
     <mat-list>
       <mat-list-item>
         <button mat-button routerLink="/">
-          <mat-icon>
-            home
-          </mat-icon >Home</button>
+          <mat-icon>home</mat-icon>
+          Home
+        </button>
       </mat-list-item>
       <mat-list-item>
         <button mat-button routerLink="/history">
-          <mat-icon>
-            history
-          </mat-icon>History</button>
+          <mat-icon>history</mat-icon>
+          History
+        </button>
       </mat-list-item>
       <mat-list-item>
         <button mat-button routerLink="/watch-later">
-          <mat-icon>
-            watch-later
-          </mat-icon>Watch Later</button>
+          <mat-icon>watch_later</mat-icon>
+          Watch Later
+        </button>
       </mat-list-item>
-
     </mat-list>
   </mat-drawer>
+
+  <!-- Main Content Area -->
   <mat-drawer-content>
     <div style="min-height: 800px">
-      <router-outlet>
-
-      </router-outlet>
+      <router-outlet></router-outlet>
     </div>
-
   </mat-drawer-content>
 </mat-drawer-container>

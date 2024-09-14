@@ -17,4 +17,13 @@ export class VideoCardComponent {
   AccessChannel() {
     this.router.navigateByUrl("/history");
   }
+
+  onVideoClick(id: string) {
+    this.router.navigateByUrl(`/video`);
+   // this.router.navigate(['/video', this.video.id]);
+  }
+
+  onChannelClick() {
+
+  }
 }

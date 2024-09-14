@@ -8,4 +8,6 @@ export type Video={
   watchNumber:number;
   published:Date;
   categories:string[];
+  likes:number;
+  dislikes:number;
 }

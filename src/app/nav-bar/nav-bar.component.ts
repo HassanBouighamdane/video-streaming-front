@@ -6,8 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
-
   search() {
 
+  }
+
+  toggleSearch() {
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.classList.toggle('d-none');
+      }
   }
 }

@@ -1,9 +1,8 @@
 <div class="container">
   <mat-card>
-
-    <mat-card-header class="d-flex justify-content-center align-items-center mb-3" style="height: 250px; overflow: hidden;">
-      <img mat-card-image [src]="video.frontImageUrl" alt="image" class="img-fluid w-100 h-100" style="object-fit: cover;">
-    </mat-card-header>
+      <mat-card-header  (click)="onVideoClick(video.id)"  class="d-flex justify-content-center align-items-center mb-3 cursor-pointer" style="height: 250px; overflow: hidden;">
+        <img mat-card-image [src]="video.frontImageUrl" alt="image" class="img-fluid w-100 h-100" style="object-fit: cover;">
+      </mat-card-header>
 
     <!-- Video Card Content -->
     <mat-card-content class="d-flex align-items-center px-2 py-1 gap-2">
@@ -11,8 +10,8 @@
         <img [src]="video.frontImageUrl" alt="userAvatar" class="rounded-circle img-fluid w-100 h-100">
       </button>
       <div class="d-flex flex-column">
-        <mat-card-title class="h5 m-0">{{video.title}}</mat-card-title>
-        <mat-card-subtitle class="text-muted">userName</mat-card-subtitle>
+        <mat-card-title  (click)="onVideoClick(video.id)" class="h5 m-0 cursor-pointer">{{video.title}}</mat-card-title>
+        <mat-card-subtitle (click)="onChannelClick()" class="text-muted cursor-pointer">userName</mat-card-subtitle>
       </div>
     </mat-card-content>
 

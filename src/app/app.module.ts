@@ -21,6 +21,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HistoryComponent } from './history/history.component';
 import { WatchLaterComponent } from './watch-later/watch-later.component';
 import { MatCardModule} from "@angular/material/card";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -36,17 +37,18 @@ import { MatCardModule} from "@angular/material/card";
     HistoryComponent,
     WatchLaterComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatListModule,
-    MatCardModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatSidenavModule,
+        MatListModule,
+        MatCardModule,
+        FormsModule,
+    ],
   providers: [
     provideAnimationsAsync()
   ],

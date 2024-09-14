@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit{
       watchNumber:500,
       published:new Date(`2022-06-06T00:00:00.000Z`),
       categories:[],
+      likes:100,
+      dislikes:20
     },
       {
         id:"2",
@@ -33,6 +35,8 @@ export class HomeComponent implements OnInit{
         watchNumber:500,
         published:new Date(`2022-06-06T00:00:00.000Z`),
         categories:[],
+        likes:100,
+        dislikes:20
       },
       {
         id:"3",
@@ -44,6 +48,8 @@ export class HomeComponent implements OnInit{
         watchNumber:500,
         published:new Date(`2022-06-06T00:00:00.000Z`),
         categories:[],
+        likes:100,
+        dislikes:20
       },
       {
         id:"4",
@@ -55,6 +61,8 @@ export class HomeComponent implements OnInit{
         watchNumber:500,
         published:new Date(`2022-06-06T00:00:00.000Z`),
         categories:[],
+        likes:100,
+        dislikes:20
       },
       {
         id:"5",
@@ -66,6 +74,8 @@ export class HomeComponent implements OnInit{
         watchNumber:500,
         published:new Date(`2022-06-06T00:00:00.000Z`),
         categories:[],
+        likes:100,
+        dislikes:20
       }
     ]
   }
