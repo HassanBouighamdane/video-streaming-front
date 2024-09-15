@@ -1,1 +1,49 @@
-<p>login works!</p>
+<div class="container h-100">
+  <div class="row justify-content-center align-items-center h-100">
+    <!-- Left side - Image -->
+    <div class="col-md-6 d-none d-md-block">
+      <img
+        src="assets/images/login-image.jpg"
+        alt="Login Image"
+        class="img-fluid"
+        style="max-height: 500px; object-fit: cover;"
+      />
+    </div>
+
+    <!-- Right side - Login Form -->
+    <div class="col-md-6 mt-2">
+      <div class="card p-4">
+        <h2 class="text-center">Login</h2>
+        <form>
+          <!-- Email or Address -->
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="email" matInput type="email" required name="email" />
+          </mat-form-field>
+
+          <!-- Password -->
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input
+              [type]="hidePassword ? 'password' : 'text'"
+              matInput
+              required
+              [(ngModel)]="password"
+              name="password"
+            />
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <!-- Submit Button -->
+          <div class="text-center mt-3">
+            <button (click)="login()" mat-raised-button color="primary" type="submit" >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

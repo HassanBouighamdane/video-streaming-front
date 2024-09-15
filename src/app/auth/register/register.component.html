@@ -1,1 +1,88 @@
-<p>register works!</p>
+<div class="container h-100">
+  <div class="row justify-content-center align-items-center h-100">
+    <!-- Left side - Image -->
+    <div class="col-md-6 d-none d-md-block">
+      <img
+        src="assets/images/login-image.jpg"
+        alt="Login Image"
+        class="img-fluid"
+        style="max-height: 500px; object-fit: cover;"
+      />
+    </div>
+    <!-- Register Form -->
+    <div class="col-md-6 mt-2">
+      <div class="card p-4">
+        <h2 class="text-center">Register</h2>
+        <form (ngSubmit)="register()">
+          <!-- Username -->
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              [(ngModel)]="userRegister.userName"
+              name="username"
+            />
+          </mat-form-field>
+
+          <!-- Email -->
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              required
+              [(ngModel)]="userRegister.email"
+              name="email"
+            />
+          </mat-form-field>
+
+          <!-- Password -->
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input
+              [type]="hidePassword ? 'password' : 'text'"
+              matInput
+              required
+              [(ngModel)]="userRegister.password"
+              name="password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="togglePasswordVisibility()"
+              type="button"
+            >
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <!-- Confirm Password -->
+          <mat-form-field class="w-100" appearance="fill">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              type="password"
+              matInput
+              required
+              [(ngModel)]="userRegister.confirmPassword"
+              name="confirmPassword"
+            />
+          </mat-form-field>
+
+          <!-- Register Button -->
+          <div class="text-center mt-3">
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="userRegister.password !== userRegister.confirmPassword"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -5,11 +5,8 @@ WORKDIR /usr/src/app
 
 COPY . /usr/src/app
 
-RUN npm install -g npm@10.8.3
-
 RUN npm install
 
 RUN npm install -g @angular/cli
-
 
 CMD ["ng", "serve"]
