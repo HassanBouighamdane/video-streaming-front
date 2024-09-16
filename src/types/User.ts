@@ -5,6 +5,7 @@ export type User={
   lastName: string,
   email: string,
   imageUrl: string,
+  role:Role
 }
 
 export type RegisterUser={
@@ -12,4 +13,8 @@ export type RegisterUser={
   email:string,
   password:string,
   confirmPassword:string,
+}
+
+export enum Role{
+  ADMIN,USER
 }
