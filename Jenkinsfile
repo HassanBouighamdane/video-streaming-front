@@ -44,8 +44,11 @@ pipeline {
         }
         stage('Cleaning'){
             steps{
-                FAILED_STAGE=env.STAGE_NAME
-                //sh "docker rmi ${DOCKER_CREDS_USR}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_VERSION}"
+            script{
+                     FAILED_STAGE=env.STAGE_NAME
+                     //sh "docker rmi ${DOCKER_CREDS_USR}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_VERSION}"
+            }
+
             }
         }
     }
