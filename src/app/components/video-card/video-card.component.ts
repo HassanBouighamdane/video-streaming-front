@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Video} from "../../types/video";
+import {Video} from "../../../types/video";
 import {Router} from "@angular/router";
 
 @Component({

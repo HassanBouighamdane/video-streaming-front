@@ -31,7 +31,7 @@
   <!-- User Dropdown Menu -->
   <mat-menu #userMenu="matMenu">
     <button mat-button routerLink="/account">Account</button>
-    <button mat-button routerLink="/logout">Logout</button>
+    <button mat-button (click)="logout()">Logout</button>
   </mat-menu>
 </mat-toolbar>
 

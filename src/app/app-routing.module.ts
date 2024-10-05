@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from "./home/home.component";
-import {VideoComponent} from "./video/video.component";
-import {AccountComponent} from "./account/account.component";
-import {CommentComponent} from "./comment/comment.component";
-import {LoginComponent} from "./auth/login/login.component";
-import {RegisterComponent} from "./auth/register/register.component";
-import {HistoryComponent} from "./history/history.component";
-import {WatchLaterComponent} from "./watch-later/watch-later.component";
+
+import {LoginComponent} from "./components/auth/login/login.component";
+import {RegisterComponent} from "./components/auth/register/register.component";
+import {HomeComponent} from "./components/home/home.component";
+import {VideoComponent} from "./components/video/video.component";
+import {AccountComponent} from "./components/account/account.component";
+import {HistoryComponent} from "./components/history/history.component";
+import {WatchLaterComponent} from "./components/watch-later/watch-later.component";
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

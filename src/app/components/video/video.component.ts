@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Video} from "../../types/video";
-import {Comment} from "../../types/comment";
-import {Router} from "@angular/router";
 
+import {Router} from "@angular/router";
+import {Video} from "../../../types/video";
+import {Comment} from "../../../types/comment"
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
