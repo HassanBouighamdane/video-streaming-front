@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import { catchError, Observable, Subscription, throwError} from "rxjs";
+import { catchError, Observable, throwError} from "rxjs";
 import {AuthRequest, AuthResponse} from "../../../types/Auth";
 
 @Injectable({
@@ -8,8 +8,7 @@ import {AuthRequest, AuthResponse} from "../../../types/Auth";
 })
 export class AuthService {
   private API_URL="http://localhost:8081/api/auth";
-  private TOKEN: string | undefined;
-
+  public isAuthenticated:boolean=false;
   constructor(private  http:HttpClient) { }
 
   public login(authRequest:AuthRequest):Observable<AuthResponse>{
@@ -19,7 +18,7 @@ export class AuthService {
 
   
   public logout(){
-    localStorage.removeItem("ACCESS_TOKEN");
+    localStorage.removeItem("access_token");
   }
 
   private handleError(error: HttpErrorResponse) {
